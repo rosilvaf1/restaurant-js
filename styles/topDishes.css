@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #9ab4d6;
+}
+header{
+    font-family: 'Lobster Two', cursive;
+    background-color: #586b8a;
+    padding-bottom: 20px;
+    color: black;
+}
+header h2{
+    font-size: 40px;
+}
+header nav ul{
+    display: flex;
+    float: right;
+    margin: 0px 20px;
+}
+header nav ul li{
+    text-decoration: none;
+    margin-right: 60px;
+    font-size: 29px;
+    margin-top: -40px;
+    list-style: none;
+}
+header nav section i {
+    font-size:40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
+}
+main .about-dish{
+    display: grid;
+    margin:5vw;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+main .about-dish div{
+    padding: 2vw;
+    margin: 2vw;
+    font-size: 2rem;
+    font-family: 'Lobster Two', cursive;   
+    border: solid 5px black;
+}
