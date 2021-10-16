@@ -30,6 +30,10 @@ header nav ul li{
 header nav section i {
     font-size:40px;
 }
+header a, a:visited , a:active, a:hover{
+    color:black;
+    text-decoration: none;
+}
 main>section>img{
     margin-left: 65vw;
     max-width:98vw;
