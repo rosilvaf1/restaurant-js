@@ -30,3 +30,76 @@ header nav ul li{
 header nav section i {
     font-size:40px;
 }
+main>section>img{
+    margin-left: 65vw;
+    max-width:98vw;
+    max-height: 30vh;
+}
+main>section>.opinions-title{
+    font-family: "Lobster Two", cursive;
+    font-size: 2em;  
+    text-indent: 0.5em;
+    margin-top: -8em;
+}
+.opinions-clients{
+    display: flex;
+    width:60vw;
+    margin: 0 10vw;
+    flex-direction: column;
+    padding: 3em 0.5em 0;
+
+}
+.speechEmily{
+    position: relative;
+    padding: 30px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    background: #add8e6;
+}
+
+.speechEmily::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 0;
+    border-width: 30px 30px 0;
+    border-style: solid;
+    border-color: #add8e6 transparent;
+}
+.speechJohn{
+    position: relative;
+    padding: 30px;
+    max-width: 500px;
+    background: #add8e6;
+    margin-bottom: 20px;
+}
+
+.speechJohn::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 0;
+    border-width: 30px 30px 0;
+    border-style: solid;
+    border-color: #add8e6 transparent;
+}
+.speechSusan{
+    position: relative;
+    padding: 30px;
+    max-width: 500px;
+    background: #add8e6;
+    margin-bottom: 20px;
+}
+
+.speechSusan::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 0;
+    border-width: 30px 30px 0;
+    border-style: solid;
+    border-color: #add8e6 transparent;
+}

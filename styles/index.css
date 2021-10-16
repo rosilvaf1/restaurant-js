@@ -1,100 +1,100 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: #9ab4d6;
+body {
+  background-color: #9ab4d6;
 }
-header{
-    font-family: 'Lobster Two', cursive;
-    background-color: #586b8a;
-    padding-bottom: 20px;
-    color: black;
+header {
+  font-family: "Lobster Two", cursive;
+  background-color: #586b8a;
+  padding-bottom: 20px;
+  color: black;
 }
-header h2{
-    font-size: 40px;
+header h2 {
+  font-size: 40px;
 }
-header nav ul{
-    display: flex;
-    float: right;
-    margin: 0px 20px;
+header nav ul {
+  display: flex;
+  float: right;
+  margin: 0px 20px;
 }
-header nav ul li{
-    text-decoration: none;
-    margin-right: 60px;
-    font-size: 29px;
-    margin-top: -40px;
-    list-style: none;
+header nav ul li {
+  text-decoration: none;
+  margin-right: 60px;
+  font-size: 29px;
+  margin-top: -40px;
+  list-style: none;
 }
 header nav section i {
-    font-size:40px;
+  font-size: 40px;
 }
-.home-images{
-    display: flex;
-    flex-direction: row;
+.home-images {
+  display: flex;
+  flex-direction: row;
 }
-.home-images img{
-    width:470px;
-    height: 400px;
+.home-images img {
+  width: 470px;
+  height: 400px;
 }
-.home-asides{
-    display: flex;
-    flex-direction: row;
-    margin-left: 40px;
+.home-asides {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
 }
-section aside{
-    font-family: 'Lobster Two', cursive;
-    border:solid black;
-    margin-top: 30px;
-    margin-left: 40px;
-    font-size: 28px;
-    flex-wrap: wrap;
-    background-color: white;
- width:750px;
- height: 350px;   
+section aside {
+  font-family: "Lobster Two", cursive;
+  border: solid black;
+  margin-top: 30px;
+  margin-left: 40px;
+  font-size: 28px;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 750px;
+  height: 350px;
 }
 
-section aside img{
-    width:230px;
-    height: 170px;
+section aside img {
+  width: 230px;
+  height: 170px;
 }
 footer {
-    font-family: 'Lobster Two', cursive;
-    background-color: #586b8a;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: row;
-    margin-top: 60px;
-    color: black;
-    text-indent: 20px;
-    font-size: 34px;
-    padding-bottom: 2vh;
+  font-family: "Lobster Two", cursive;
+  background-color: #586b8a;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+  color: black;
+  text-indent: 20px;
+  font-size: 34px;
+  
 }
-footer .rect1{
-    margin-left: 18vw;
-    width:100px;
-    margin-top: -9vh;
-    border-radius: 8px;
-    height:80px;
-    background:#3b5998;
+footer .rect1 {
+  margin-left: 18vw;
+  width: 100px;
+  margin-top: -9vh;
+  border-radius: 8px;
+  height: 80px;
+  background: #3b5998;
 }
-footer .rect2{
-    margin-left: 18vw;
-    width:100px;
-    margin-top: -9vh;
-    border-radius: 8px;
-    height:80px;
-    background:#00acee;
+footer .rect2 {
+  margin-left: 18vw;
+  width: 100px;
+  margin-top: -9vh;
+  border-radius: 8px;
+  height: 80px;
+  background: #00acee;
 }
-footer .rect3{
-    margin-left: 18vw;
-    width:100px;
-    margin-top: -9vh;
-    border-radius: 8px;
-    height:80px;
-    background:#833AB4;
+footer .rect3 {
+  margin-left: 18vw;
+  width: 100px;
+  margin-top: -9vh;
+  border-radius: 8px;
+  height: 80px;
+  background: #833ab4;
 }
-footer i{
-    font-size: 80px;
+footer i {
+  font-size: 80px;
 }
