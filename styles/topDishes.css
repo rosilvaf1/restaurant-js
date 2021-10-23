@@ -50,7 +50,6 @@ main h2{
 }
 main .about-dish{
     display: grid;
-    
 }
 main .about-dish div{
     padding: 2vw;
