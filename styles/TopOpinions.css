@@ -43,7 +43,7 @@ main>section>.opinions-title{
     font-family: "Lobster Two", cursive;
     font-size: 2em;  
     text-indent: 0.5em;
-    margin-top: -8em;
+    margin-top: -6em;
 }
 .opinions-clients{
     display: flex;

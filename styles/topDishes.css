@@ -37,7 +37,7 @@ header a, a:visited , a:active, a:hover{
 main h2{
     padding: 0;
     margin: 0;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-family: 'Lobster Two', cursive;   
 }
 .gallery {
@@ -56,7 +56,7 @@ main .about-dish div{
     padding: 2vw;
     background-color: white;
     margin: 2vw;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-family: 'Lobster Two', cursive;   
     border: solid 5px black;
 }
