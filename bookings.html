@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top opinions</title>
+    <link rel="stylesheet" href="styles/bookings.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <section>
+          <a href="index.html">
+            <i class="fas fa-utensils"></i>
+            <h2>English Restaurants</h2>
+          </a>
+        </section>
+        <ul>
+          <li>
+            <a href="restaurants.html"
+              ><i class="fas fa-store-alt">Restaurants</i></a
+            >
+          </li>
+          <li>
+            <a href="topDishes.html"><i class="fas fa-fish">Top Dishes</i></a>
+          </li>
+          <li>
+            <a href="topOpinions.html"
+              ><i class="fas fa-user-check">Top opinions</i></a
+            >
+          </li>
+          <li>
+            <a href="bookings.html"
+              ><i class="fas fa-address-book">Bookings</i></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <form id="contact" action="" method="post">
+        <h3>Bookings Contact Form</h3>
+        <fieldset>
+        <legend>Contact you with your restaurant!</legend>
+        <legend for="start">Write yout Name:</legend>
+      
+          <input
+            placeholder="Your name"
+            type="text"
+            tabindex="1"
+            required
+            autofocus
+          />
+      
+        <legend for="start">Write yout Name:</legend>
+      
+          <input
+            placeholder="Your Email Address"
+            type="email"
+            tabindex="2"
+            required
+          />
+      
+        <legend for="start">Write your Number:</legend>
+      
+          <input
+            placeholder="Your Phone Number (optional)"
+            type="tel"
+            tabindex="3"
+            required
+          />
+      
+        <legend for="start">Choose a restaurant:</legend>
+      
+          <input
+            placeholder="Restaurant selected"
+            type="text"
+            tabindex="4"
+            required
+          />
+      
+        <legend for="start">Date:</legend>
+      
+        <input
+          type="date"
+          id="start"
+          name="trip-start"
+          value="2018-07-22"
+          min="2022-01-01"
+          max="2023-12-31"
+        />
+      
+        <legend for="start">Orders:</legend>
+      
+          <textarea
+            placeholder="Type your order here...."
+            tabindex="5"
+            required
+          ></textarea>
+      
+      
+          <button
+            name="submit"
+            type="submit"
+            id="contact-submit"
+            data-submit="...Sending"
+          >
+            Submit
+          </button>
+      
+      </form>
+    </fieldset>
+    </div>
+  </body>
+</html>
