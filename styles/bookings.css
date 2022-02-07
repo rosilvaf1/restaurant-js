@@ -1,56 +1,112 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    background-color: #9ab4d6;
-  }
-  header {
-    font-family: "Lobster Two", cursive;
-    background-color: #586b8a;
-    padding-bottom: 20px;
-    color: black;
-  }
-  header h2 {
-    font-size: 40px;
-  }
-  header nav ul {
-    display: flex;
-    float: right;
-    margin: 0px 20px;
-  }
-  header nav ul li {
-    text-decoration: none;
-    margin-right: 60px;
-    font-size: 29px;
-    margin-top: -40px;
-    list-style: none;
-  }
-  header nav section i {
-    font-size: 40px;
-  }
-  header a, a:visited , a:active, a:hover{
-    color:black;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.container{
+body {
+  background-color: #9ab4d6;
+}
+header {
+  font-family: "Lobster Two", cursive;
+  background-color: #586b8a;
+  padding-bottom: 20px;
+  color: black;
+}
+header h2 {
+  font-size: 40px;
+}
+header nav ul {
+  display: flex;
+  float: right;
+  margin: 0px 20px;
+}
+header nav ul li {
+  text-decoration: none;
+  margin-right: 60px;
+  font-size: 29px;
+  margin-top: -40px;
+  list-style: none;
+}
+header nav section i {
+  font-size: 40px;
+}
+header a,
+a:visited,
+a:active,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+.container {
   font-family: "Lobster Two", cursive;
   font-size: 1.7em;
-  margin: 20px 550px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  margin-left: 150px;
 }
-button{
+button {
   font-family: "Lobster Two", cursive;
   font-size: 1em;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 440px;
+  background-color: white;
 }
-input, textarea{
+input,
+textarea {
   width: 70vh;
   height: 5vh;
   border: solid 2px black;
 }
-fieldset{
-  padding: 2vw;
+fieldset {
+  padding-right: 2vw;
+  padding-left: 2vw;
+  padding-bottom: 1vw;
+  width: 550px;
   border: solid 2px black;
+}
+.group-cards {
+  display: grid;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  height: 30vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  border: solid 2px black;
+  background-color: white;
+}
+.card-order {
+  margin-top: 100px;
+  height: 400px;
+  width: 480px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  border: solid 2px black;
+  background-color: white;
+}
+.card-order h3,
+#values {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.card-order h5{
+  margin-left: 12px;
+}
+.card-order #value_order {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.card-order .order {
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.card h4{
+  font-family: "Lobster Two", cursive; 
+  font-size: 23px;
 }

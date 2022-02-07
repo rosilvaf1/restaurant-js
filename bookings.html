@@ -56,22 +56,24 @@
         <h3>Bookings Contact Form</h3>
         <fieldset>
         <legend>Contact you with your restaurant!</legend>
-        <legend for="start">Write yout Name:</legend>
+        <legend for="start">Write your Name:</legend>
       
           <input
             placeholder="Your name"
             type="text"
             tabindex="1"
+            id="input_name"
             required
             autofocus
           />
       
-        <legend for="start">Write yout Name:</legend>
+        <legend for="start">Write your Email:</legend>
       
           <input
             placeholder="Your Email Address"
             type="email"
             tabindex="2"
+            id="input_email"
             required
           />
       
@@ -81,6 +83,7 @@
             placeholder="Your Phone Number (optional)"
             type="tel"
             tabindex="3"
+            id="input_number"
             required
           />
       
@@ -90,6 +93,7 @@
             placeholder="Restaurant selected"
             type="text"
             tabindex="4"
+            id="input_restaurant"
             required
           />
       
@@ -109,6 +113,7 @@
           <textarea
             placeholder="Type your order here...."
             tabindex="5"
+            id="input_order"
             required
           ></textarea>
       
@@ -124,6 +129,44 @@
       
       </form>
     </fieldset>
+    <div class="card-order">
+      <h5 id="value_date"></h5>
+      <h5 id="value_restaurant"></h5>
+      <h3>Client: </h3><h3 id="values"></h3>
+     <p class="order">Your order:</p> <p id="value_order"></p>
     </div>
+  </div>
+    <div class="group-cards">
+       <div class="card"> 
+        <h1></h1>
+        <img src="" alt="">
+        <h4></h4>
+      </div>
+      <div class="card"> 
+        <h1></h1>
+        <img src="" alt="">
+        <h4></h4>
+      </div>
+      <div class="card"> 
+        <h1></h1>
+        <img src="" alt="">
+        <h4></h4>
+      </div>
+      <div class="card"> 
+        <h1></h1>
+        <img src="" alt="">
+        <h4></h4>
+      </div>
+      <div class="card"> 
+        <h1></h1>
+        <img src="" alt="">
+        <h4></h4>
+      </div><div class="card"> 
+        <h1></h1>
+        <img src="" alt="">
+        <h4></h4>
+      </div>
+    </div>
+    <script src="scripts/booking.js"></script>
   </body>
 </html>
