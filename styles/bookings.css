@@ -65,7 +65,7 @@ fieldset {
   width: 550px;
   border: solid 2px black;
 }
-.group-cards {
+#group-cards {
   display: grid;
   margin-top: 30px;
   margin-bottom: 40px;
@@ -106,7 +106,16 @@ fieldset {
   margin-left: 30px;
   margin-top: 15px;
 }
+.card p,h1{
+  font-family: "Lobster Two", cursive; 
+  font-size: 23px;
+}
 .card h4{
   font-family: "Lobster Two", cursive; 
   font-size: 23px;
+  margin-left: 330px;
+}
+.card img{
+  width:280px;
+  height: 160px;
 }

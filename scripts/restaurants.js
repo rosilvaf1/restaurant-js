@@ -36,7 +36,7 @@ const restaurants = [{
   description:
     "Bar with vintage dark-wood decor and stripped floor, plus Modern European and tapas dining."
 }]
-module.exports = {restaurants}
+
 /*console.log(`${AngusCircus.address}`)
 delete AngusCircus.address;
 console.log(AngusCircus)
@@ -46,4 +46,4 @@ for(i=0;i<restaurants.length; i++){
 var text = document.getElementsByTagName('img')[i]=`${restaurants[i].image}`;  
 var text = document.getElementsByTagName('p')[i].innerHTML =`${restaurants[i].description}`;
 }
-console.log(AngusCircus.description)
+setTimeout(()=>{alert('If you want to book a site, go to bookings')},200);
