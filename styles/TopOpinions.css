@@ -53,11 +53,42 @@ main>section>.opinions-title{
     padding: 3em 0.5em 0;
 
 }
+.container {
+    font-family: "Lobster Two", cursive;
+    font-size: 1.7em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    margin-left: 150px;
+  }
+input,
+textarea {
+  width: 98vh;
+  height: 6vh;
+  border: solid 2px black;
+}
+button {
+    font-family: "Lobster Two", cursive;
+    font-size: 1em;
+    margin-top: 20px;
+    margin-left: 840px;
+    background-color: white;
+}
+#input_order{
+    height:10vh;
+}
+fieldset {
+  padding-right: 2vw;
+  padding-left: 2vw;
+  padding-bottom: 1vw;
+  width: 760px;
+  border: solid 2px black;
+}
 .speechEmily{
     position: relative;
     padding: 30px;
     margin-bottom: 20px;
-    max-width: 500px;
+    max-width: 700px;
     background: #add8e6;
 }
 
@@ -74,7 +105,7 @@ main>section>.opinions-title{
 .speechJohn{
     position: relative;
     padding: 30px;
-    max-width: 500px;
+    max-width: 700px;
     background: #add8e6;
     margin-bottom: 20px;
 }
@@ -92,7 +123,7 @@ main>section>.opinions-title{
 .speechSusan{
     position: relative;
     padding: 30px;
-    max-width: 500px;
+    max-width: 700px;
     background: #add8e6;
     margin-bottom: 20px;
 }
@@ -106,4 +137,7 @@ main>section>.opinions-title{
     border-width: 30px 30px 0;
     border-style: solid;
     border-color: #add8e6 transparent;
+}
+p{
+    font-size: 20px;
 }

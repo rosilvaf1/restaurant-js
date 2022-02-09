@@ -94,7 +94,7 @@ for(i=0;i<restaurants.length; i++){
   const img = document.createElement("img");
   img.setAttribute('src',`${restaurants[i].image}`)
   const legend = document.createElement("h4");
-  legend.innerHTML = `reservations:${arr[0]}`
+  legend.innerHTML= 'reservations: 0'
   div.appendChild(title);
   div.appendChild(text);
   div.appendChild(img)
@@ -109,5 +109,5 @@ let getReservation = () =>{
 }
 
 let button = document.getElementById('contact-submit')
-button.addEventListener('click', getReservation)
+
 setTimeout(()=>{alert('Hi, here you can book a site')},20);

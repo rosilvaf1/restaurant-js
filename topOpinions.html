@@ -37,23 +37,56 @@
         <section>
             <img src="images/Learntalk_BlogPosts_I_Think.jpg" alt="opinions_image">
             <h2 class="opinions-title">Opinions from clients</h2>
+            <div class="container">
+            <form id="contact" action="" method="post">
+                <h2>Bookings Contact Form</h2>
+                <fieldset>
+                <legend>Contact you with your restaurant!</legend>
+                <legend for="start">Write your Name:</legend>
+            
+                <input
+                    placeholder="Your name"
+                    type="text"
+                    tabindex="1"
+                    id="input_name"
+                    required
+                    autofocus
+                />
+            
+                <legend for="start">Write your opinion:</legend>
+            
+                <textarea
+                    placeholder="Type your opinion here...."
+                    tabindex="5"
+                    id="input_order"
+                    required
+                ></textarea>
+
+                <button
+                name="submit"
+                id="contact-submit"
+                >
+                Submit
+                </button>
+            </form>
         </section>
+        </div>
         <div role="region" aria-label="opinions-of-clients" class="opinions-clients">
             <div class="speechSusan" role="region" aria-label="susan-opinion" >
-                <h5>Susan</h5>
+                <h2>Susan</h2>
                 <p>A service that seems every day more like a winery, shouting at each other among the waiters, reproaching each other that they have not warned that the coffees were already ready to go to serve, The meter that is tall and shaved, does not pay attention when you ask for more wine or the bill, it gets lost with the tourists and you waiting 20min. It's a shame because I've been going for a long time and the service gets worse every day.</p>
             </div>
             <div class="speechJohn" role="region" aria-label="john-opinion">
-                <h5>John</h5>
+                <h2>John</h2>
                 <p>Please improve your attention! Last night we went to dinner and still with food on the plate, an German girl who served us, desperately wanted to take the dishes from the table, even without glasses she left us and did not offer to fill them, when we told her not to take the plates without asking us She responded haughtily and ironic that this was the way of working in the restaurant, she did not apologize, she turned and left</p>
             </div>
             <div class="speechEmily" role="region" aria-label="emily-opinion">
-                <h5>Emily</h5>
-                <p>The attention more or less, the waitress very friendly but the owner, should listen better to the customer. The tasting menu leaves a lot to be desired for the price. The menu is chosen by the chef and if you don't like any ingredient, no problem !!! They don't give you that dish but they don't give you another one in its place so you taste one less, sardine meatballs full of scales and thorns, cuttlefish flooded in a sea of ​​temptation, the first pasta boiled without more and sticky with four ingredients on top and the second pasta had so much anise that it killed the rest of the flavors, a dessert with shavings of a stale sponge cake with a taste of poor preservation. I would never go back.</p>
+                <h2>Emily</h2>
+                <p>The attention more or less, the waitress very friendly but the owner, should listen better to the customer. The tasting menu leaves a lot to be desired for the price. The menu is chosen by the chef and if you don't like any ingredient, no problem !!!.</p>
             </div>
         </div>
     </main>
 
 </body>
-
+<script src="scripts/topOpinions.js"></script>
 </html>
