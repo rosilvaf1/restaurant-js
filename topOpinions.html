@@ -38,7 +38,7 @@
             <img src="images/Learntalk_BlogPosts_I_Think.jpg" alt="opinions_image">
             <h2 class="opinions-title">Opinions from clients</h2>
             <div class="container">
-            <form id="contact" action="" method="post">
+            <form id="contact" onsubmit="return submitOpinion()">
                 <h2>Bookings Contact Form</h2>
                 <fieldset>
                 <legend>Contact you with your restaurant!</legend>
@@ -58,32 +58,22 @@
                 <textarea
                     placeholder="Type your opinion here...."
                     tabindex="5"
-                    id="input_order"
+                    id="input_opinion"
                     required
                 ></textarea>
 
                 <button
                 name="submit"
                 id="contact-submit"
-                >
+                type="submit">
                 Submit
                 </button>
             </form>
         </section>
         </div>
-        <div role="region" aria-label="opinions-of-clients" class="opinions-clients">
-            <div class="speechSusan" role="region" aria-label="susan-opinion" >
-                <h2>Susan</h2>
-                <p>A service that seems every day more like a winery, shouting at each other among the waiters, reproaching each other that they have not warned that the coffees were already ready to go to serve, The meter that is tall and shaved, does not pay attention when you ask for more wine or the bill, it gets lost with the tourists and you waiting 20min. It's a shame because I've been going for a long time and the service gets worse every day.</p>
-            </div>
-            <div class="speechJohn" role="region" aria-label="john-opinion">
-                <h2>John</h2>
-                <p>Please improve your attention! Last night we went to dinner and still with food on the plate, an German girl who served us, desperately wanted to take the dishes from the table, even without glasses she left us and did not offer to fill them, when we told her not to take the plates without asking us She responded haughtily and ironic that this was the way of working in the restaurant, she did not apologize, she turned and left</p>
-            </div>
-            <div class="speechEmily" role="region" aria-label="emily-opinion">
-                <h2>Emily</h2>
-                <p>The attention more or less, the waitress very friendly but the owner, should listen better to the customer. The tasting menu leaves a lot to be desired for the price. The menu is chosen by the chef and if you don't like any ingredient, no problem !!!.</p>
-            </div>
+        <div id="name"></div>
+        <div id="opinion"></div>
+        <div role="region" aria-label="opinions-of-clients" id="opinions" class="opinions-clients">
         </div>
     </main>
 

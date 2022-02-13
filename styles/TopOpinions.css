@@ -1,81 +1,83 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: #9ab4d6;
+body {
+  background-color: #9ab4d6;
 }
-header{
-    font-family: 'Lobster Two', cursive;
-    background-color: #586b8a;
-    padding-bottom: 20px;
-    color: black;
+header {
+  font-family: "Lobster Two", cursive;
+  background-color: #586b8a;
+  padding-bottom: 20px;
+  color: black;
 }
-header h2{
-    font-size: 40px;
+header h2 {
+  font-size: 40px;
 }
-header nav ul{
-    display: flex;
-    float: right;
-    margin: 0px 20px;
+header nav ul {
+  display: flex;
+  float: right;
+  margin: 0px 20px;
 }
-header nav ul li{
-    text-decoration: none;
-    margin-right: 60px;
-    font-size: 29px;
-    margin-top: -40px;
-    list-style: none;
+header nav ul li {
+  text-decoration: none;
+  margin-right: 60px;
+  font-size: 29px;
+  margin-top: -40px;
+  list-style: none;
 }
 header nav section i {
-    font-size:40px;
+  font-size: 40px;
 }
-header a, a:visited , a:active, a:hover{
-    color:black;
-    text-decoration: none;
+header a,
+a:visited,
+a:active,
+a:hover {
+  color: black;
+  text-decoration: none;
 }
-main>section>img{
-    margin-left: 65vw;
-    max-width:98vw;
-    max-height: 30vh;
+main > section > img {
+  margin-left: 65vw;
+  max-width: 98vw;
+  max-height: 30vh;
 }
-main>section>.opinions-title{
-    font-family: "Lobster Two", cursive;
-    font-size: 2em;  
-    text-indent: 0.5em;
-    margin-top: -6em;
+main > section > .opinions-title {
+  font-family: "Lobster Two", cursive;
+  font-size: 2em;
+  text-indent: 0.5em;
+  margin-top: -6em;
 }
-.opinions-clients{
-    display: flex;
-    width:60vw;
-    margin: 0 10vw;
-    flex-direction: column;
-    padding: 3em 0.5em 0;
-
+.opinions-clients {
+  display: flex;
+  width: 60vw;
+  margin: 0 10vw;
+  flex-direction: column;
+  padding: 3em 0.5em 0;
 }
 .container {
-    font-family: "Lobster Two", cursive;
-    font-size: 1.7em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 20px;
-    margin-left: 150px;
-  }
+  font-family: "Lobster Two", cursive;
+  font-size: 1.7em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  margin-left: 150px;
+}
 input,
 textarea {
   width: 98vh;
   height: 6vh;
   border: solid 2px black;
 }
-button {
-    font-family: "Lobster Two", cursive;
-    font-size: 1em;
-    margin-top: 20px;
-    margin-left: 840px;
-    background-color: white;
+#contact-submit {
+  font-family: "Lobster Two", cursive;
+  font-size: 1em;
+  margin-top: 20px;
+  margin-left: 840px;
+  background-color: white;
 }
-#input_order{
-    height:10vh;
+#input_order {
+  height: 10vh;
 }
 fieldset {
   padding-right: 2vw;
@@ -84,60 +86,51 @@ fieldset {
   width: 760px;
   border: solid 2px black;
 }
-.speechEmily{
-    position: relative;
-    padding: 30px;
-    margin-bottom: 20px;
-    max-width: 700px;
-    background: #add8e6;
+.speech {
+  position: relative;
+  padding: 30px;
+  margin-bottom: 20px;
+  max-width: 700px;
+  background: #add8e6;
 }
 
-.speechEmily::after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    left: -30px;
-    width: 0;
-    border-width: 30px 30px 0;
-    border-style: solid;
-    border-color: #add8e6 transparent;
+.speech::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  width: 0;
+  border-width: 30px 30px 0;
+  border-style: solid;
+  border-color: #add8e6 transparent;
 }
-.speechJohn{
-    position: relative;
-    padding: 30px;
-    max-width: 700px;
-    background: #add8e6;
-    margin-bottom: 20px;
+p {
+  font-size: 20px;
 }
-
-.speechJohn::after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    left: -30px;
-    width: 0;
-    border-width: 30px 30px 0;
-    border-style: solid;
-    border-color: #add8e6 transparent;
+.group_buttons {
+  display: grid;
+  margin-top: 30px;
+  grid-template-rows: 1fr 1fr 1fr;
 }
-.speechSusan{
-    position: relative;
-    padding: 30px;
-    max-width: 700px;
-    background: #add8e6;
-    margin-bottom: 20px;
+.trash_bin {
+  color: white;
+  font-size: 20px;
+  background-color: red;
+  width: 120px;
+  height: 50px;
+}
+.button_edit {
+  color: white;
+  font-size: 20px;
+  background-color: purple;
+  width: 120px;
+  height: 50px;
 }
 
-.speechSusan::after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    left: -30px;
-    width: 0;
-    border-width: 30px 30px 0;
-    border-style: solid;
-    border-color: #add8e6 transparent;
-}
-p{
-    font-size: 20px;
+.button_accept {
+  color: white;
+  font-size: 20px;
+  background-color: green;
+  width: 120px;
+  height: 50px;
 }
