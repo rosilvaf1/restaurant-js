@@ -38,7 +38,7 @@
             <img src="images/Learntalk_BlogPosts_I_Think.jpg" alt="opinions_image">
             <h2 class="opinions-title">Opinions from clients</h2>
             <div class="container">
-            <form id="contact" onsubmit="return submitOpinion()">
+            <form id="contact">
                 <h2>Bookings Contact Form</h2>
                 <fieldset>
                 <legend>Contact you with your restaurant!</legend>
@@ -49,6 +49,7 @@
                     type="text"
                     tabindex="1"
                     id="input_name"
+                    name="name"
                     required
                     autofocus
                 />
@@ -58,6 +59,7 @@
                 <textarea
                     placeholder="Type your opinion here...."
                     tabindex="5"
+                    name="opinion"
                     id="input_opinion"
                     required
                 ></textarea>

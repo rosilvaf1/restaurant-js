@@ -55,19 +55,14 @@ Opinion1.createCards();
 Opinion2.createCards();
 Opinion3.createCards();
 
-const input_name = document.getElementById("input_name");
-const nameInput = document.getElementById("name");
-input_name.addEventListener("input", getName);
+const form = document.forms[0];
 
-const input_opinion = document.getElementById("input_opinion");
-const opinionInput = document.getElementById("opinion");
-input_opinion.addEventListener("input", getOpinion);
-const inputOpinion = document.getElementById("input_opinion").value;
 
-function getName(e) {
-    nameInput.textContent = e.target.value;
-}
-function getOpinion(e){
-    opinionInput.textContent = e.target.value;
-    console.log(inputOpinion)
-}
+form.addEventListener("submit", 
+function submit(event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+  const entries = formData.entries(); // array of entries
+  const data = Object.fromEntries(entries);
+  console.log(data)
+});
