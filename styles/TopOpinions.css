@@ -107,10 +107,10 @@ fieldset {
 p {
   font-size: 20px;
 }
-.group_buttons {
+#group_buttons {
   display: grid;
   margin-top: 30px;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .trash_bin {
   color: white;
@@ -119,7 +119,7 @@ p {
   width: 120px;
   height: 50px;
 }
-.button_edit {
+#button_edit {
   color: white;
   font-size: 20px;
   background-color: purple;
@@ -127,7 +127,7 @@ p {
   height: 50px;
 }
 
-.button_accept {
+#button_accept {
   color: white;
   font-size: 20px;
   background-color: green;

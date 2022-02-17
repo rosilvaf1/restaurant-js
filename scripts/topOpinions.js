@@ -18,23 +18,58 @@ class Opinions {
     text.innerHTML = `${this.opinion}`;
     const buttons = document.createElement("div");
     buttons.setAttribute("class", "group_buttons");
+    div.appendChild(title);
+    div.appendChild(text);
+    div.appendChild(buttons);
+  }
+  creteCardsEditables() {
+    const div = document.createElement("div");
+    div.setAttribute("class", "speech");
+    document.getElementById("opinions").appendChild(div);
+    const title = document.createElement("h1");
+    title.innerHTML = `${this.name}`;
+    const text = document.createElement("p");
+    text.setAttribute("class", "p");
+    text.innerHTML = `${this.opinion}`;
+    const buttons = document.createElement("div");
+    buttons.setAttribute("id", "group_buttons");
     const trash_bin = document.createElement("button");
     trash_bin.setAttribute("class", "trash_bin");
     trash_bin.innerHTML = "Delete";
     const button_edit = document.createElement("button");
-    button_edit.setAttribute("class", "button_edit");
+    button_edit.setAttribute("id", "button_edit");
     button_edit.innerHTML = "Edit";
     const button_accept = document.createElement("button");
-    button_accept.setAttribute("class", "button_accept");
+    button_accept.setAttribute("id", "button_accept");
     button_accept.innerHTML = "Accept";
     div.appendChild(title);
     div.appendChild(text);
     div.appendChild(buttons);
-    div.appendChild(trash_bin);
-    div.appendChild(button_edit);
-    div.appendChild(button_accept);
+    buttons.appendChild(trash_bin);
+    buttons.appendChild(button_edit);
+    buttons.appendChild(button_accept);
+    document
+      .getElementById("button_accept")
+      .addEventListener("click", this.acceptClick)
+   
+    document
+      .getElementById("button_edit")
+      .addEventListener("click", this.editOpinion);
+  }
+    acceptClick(){ 
+      const group = document.getElementById("group_buttons");
+      group.parentElement.removeChild(group); 
+  }
+  
+  editOpinion() {
+    document.getElementsByClassName("p").remove();
+    const input_edit = document.createElement("input");
+    input_edit.setAttribute("id", "input_edit");
+    input_edit.value = `${this.opinion}`;
+    document.getElementsByTagName("div").appendChild(input_edit);
   }
 }
+
 
 const Opinion1 = new Opinions(
   "Susan",
@@ -57,12 +92,12 @@ Opinion3.createCards();
 
 const form = document.forms[0];
 
-
-form.addEventListener("submit", 
+form.addEventListener("submit", submit);
 function submit(event) {
   event.preventDefault();
   const formData = new FormData(this);
   const entries = formData.entries(); // array of entries
   const data = Object.fromEntries(entries);
-  console.log(data)
-});
+  const new_opinion = new Opinions(data.name, data.opinion);
+  new_opinion.creteCardsEditables();
+}
