@@ -25,11 +25,12 @@ class Opinions {
   creteCardsEditables() {
     const div = document.createElement("div");
     div.setAttribute("class", "speech");
+    div.setAttribute("id", `${this.opinion}`);
     document.getElementById("opinions").appendChild(div);
     const title = document.createElement("h1");
     title.innerHTML = `${this.name}`;
     const text = document.createElement("p");
-    text.setAttribute("class", "p");
+    text.setAttribute("id", "opinion");
     text.innerHTML = `${this.opinion}`;
     const buttons = document.createElement("div");
     buttons.setAttribute("id", "group_buttons");
@@ -48,28 +49,8 @@ class Opinions {
     buttons.appendChild(trash_bin);
     buttons.appendChild(button_edit);
     buttons.appendChild(button_accept);
-    document
-      .getElementById("button_accept")
-      .addEventListener("click", this.acceptClick)
-   
-    document
-      .getElementById("button_edit")
-      .addEventListener("click", this.editOpinion);
-  }
-    acceptClick(){ 
-      const group = document.getElementById("group_buttons");
-      group.parentElement.removeChild(group); 
-  }
-  
-  editOpinion() {
-    document.getElementsByClassName("p").remove();
-    const input_edit = document.createElement("input");
-    input_edit.setAttribute("id", "input_edit");
-    input_edit.value = `${this.opinion}`;
-    document.getElementsByTagName("div").appendChild(input_edit);
   }
 }
-
 
 const Opinion1 = new Opinions(
   "Susan",
@@ -100,4 +81,20 @@ function submit(event) {
   const data = Object.fromEntries(entries);
   const new_opinion = new Opinions(data.name, data.opinion);
   new_opinion.creteCardsEditables();
+  document.getElementById("button_edit")
+  .addEventListener("click", editOpinion(data));
+  document.getElementById("button_edit")
+  .addEventListener("click", acceptClick);
+}
+
+function acceptClick() {
+  const group = document.getElementById("group_buttons");
+  group.parentElement.removeChild(group);
+}
+function editOpinion(data) {
+  console.log(data.opinion)
+  const speech = document.getElementById(`${data.opinion}`);
+  const input_edit = document.createElement("input");
+  input_edit.value = `${data.opinion}`;
+  speech.appendChild(input_edit);
 }
