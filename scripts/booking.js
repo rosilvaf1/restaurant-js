@@ -14,6 +14,7 @@ const restaurants = [{
   address: "243 Argyll St, Oxford St, London W1D 2LU, United Kingdom",
   description:
     "Steakhouse handy for shoppers, also serving ribs, chicken, fish and veggie dishes plus breakfast.",
+    reservation:'4'
 },
 {
 name: "Bybrook Restaurant",
@@ -23,7 +24,7 @@ telephone: "5905321212",
 address: " West St, Castle Combe, Chippenham SN14 7HX, United Kingdom",
 description:
   "Soft-lit restaurant and cafe with neutral tones in Georgian building serving seasonal British food.",
-
+  reservation:'8'
 },
 {
 name: "Launceston Place",
@@ -33,6 +34,7 @@ telephone: "4305382212",
 address: " 1A Launceston Pl, London W8 5RL, United Kingdom",
 description:
   "Fine dining restaurant in an 1839 townhouse, with a notable wine list and Modern British menu.",
+  reservation:'7'
 },
 {
 name: "Bar 61 Restaurant",
@@ -41,21 +43,24 @@ image:
 telephone: "378900212",
 address: "61A Streatham Hill, London SW2 4TX, United Kingdom",
 description:
-  "Bar with vintage dark-wood decor and stripped floor, plus Modern European and tapas dining."
+  "Bar with vintage dark-wood decor and stripped floor, plus Modern European and tapas dining.",
+  reservation:'0'
 },
 {
   name:"Ekte Nordic Kitchen",
   image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCrsNqpcc_2G42e1Sq7k6SvYoTmaOH439U51GUrPVhjdjJphs0JDvHuPYXR9kKde6qma0&usqp=CAU",
   telephone:"658758484",
   address:" 2 -8 Bloomberg Arcade, London EC4N 8AR, United Kingdom",
-  description:"All-day café with wine & a focus on Nordic cuisine in a light-filled space with contemporary decor."
+  description:"All-day café with wine & a focus on Nordic cuisine in a light-filled space with contemporary decor.",
+  reservation:'10'
 },
 {
   name:"Wiltons Restaurant",
   image:"https://cdn.thegentlemansjournal.com/wp-content/uploads/2017/10/andy-hayler-wiltons-outside-w709-h532-664x442-c-center.jpg",
   telephone:"4298472947",
   address:"55 Jermyn St, St. James's, London SW1Y 6LX, United Kingdom",
-  description:"Bastion of Britishness serving fine dining classics including game and seafood, plus oyster bar."
+  description:"Bastion of Britishness serving fine dining classics including game and seafood, plus oyster bar.",
+  reservation:'2'
 }]
 input_name.addEventListener('input', updateValueName);
 
@@ -94,7 +99,7 @@ for(i=0;i<restaurants.length; i++){
   const img = document.createElement("img");
   img.setAttribute('src',`${restaurants[i].image}`)
   const legend = document.createElement("h4");
-  legend.innerHTML= 'reservations: 0'
+  legend.innerHTML= `reservations: ${restaurants[i].reservation} `
   div.appendChild(title);
   div.appendChild(text);
   div.appendChild(img)

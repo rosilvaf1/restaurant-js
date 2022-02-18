@@ -25,7 +25,7 @@ class Opinions {
   creteCardsEditables() {
     const div = document.createElement("div");
     div.setAttribute("class", "speech");
-    div.setAttribute("id", `${this.opinion}`);
+    div.setAttribute("id", `${this.opinion}_${this.name}`);
     document.getElementById("opinions").appendChild(div);
     const title = document.createElement("h1");
     title.innerHTML = `${this.name}`;
@@ -35,7 +35,7 @@ class Opinions {
     const buttons = document.createElement("div");
     buttons.setAttribute("id", "group_buttons");
     const trash_bin = document.createElement("button");
-    trash_bin.setAttribute("class", "trash_bin");
+    trash_bin.setAttribute("id", "trash_bin");
     trash_bin.innerHTML = "Delete";
     const button_edit = document.createElement("button");
     button_edit.setAttribute("id", "button_edit");
@@ -81,20 +81,38 @@ function submit(event) {
   const data = Object.fromEntries(entries);
   const new_opinion = new Opinions(data.name, data.opinion);
   new_opinion.creteCardsEditables();
-  document.getElementById("button_edit")
-  .addEventListener("click", editOpinion(data));
-  document.getElementById("button_edit")
-  .addEventListener("click", acceptClick);
-}
 
-function acceptClick() {
-  const group = document.getElementById("group_buttons");
-  group.parentElement.removeChild(group);
-}
-function editOpinion(data) {
-  console.log(data.opinion)
-  const speech = document.getElementById(`${data.opinion}`);
-  const input_edit = document.createElement("input");
-  input_edit.value = `${data.opinion}`;
-  speech.appendChild(input_edit);
+  document.getElementById("button_edit").addEventListener("click", function(){editOpinion()});
+  document.getElementById("button_accept").addEventListener("click", acceptClick);
+  document.getElementById("trash_bin").addEventListener("click", deleteClick);
+
+  function editOpinion() {
+    console.log(data.opinion)
+    const speech = document.getElementById(`${data.opinion}_${data.name}`);
+    const input_edit = document.createElement("input");
+    input_edit.setAttribute('class', 'input_edit')
+    input_edit.value = `${data.opinion}`;
+    speech.appendChild(input_edit);
+    
+    input_edit.addEventListener('input', updateValueOrder);
+    document.getElementById('button_edit').remove();
+
+    function updateValueOrder(e) {
+      document.getElementById('opinion').textContent = e.target.value;
+    }
+
+    document.getElementById("button_accept").addEventListener("click", editAccept);
+    function editAccept(e){
+      input_edit.remove();   
+    }
+  }
+  function acceptClick() {
+    const group = document.getElementById("group_buttons");
+    group.parentElement.removeChild(group);
+  }
+  function deleteClick(){
+    const speech = document.getElementById(`${data.opinion}_${data.name}`);
+    speech.remove();
+     
+  }
 }
