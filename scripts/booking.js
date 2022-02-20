@@ -113,25 +113,24 @@ function createCards() {
     div.appendChild(legend);
   }
 }
+const form = document.forms[0];
+form.addEventListener("submit", createReservation);
 
-const btn_click = document.getElementById("contact-submit");
-btn_click.addEventListener("submit", createReservation);
-
-function createReservation() {
-const form = document.getElementById("contact");
-var checkVal = form.checkValidity();
-if(checkVal)  { const div = document.createElement("div");}
+function createReservation(event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+  const entries = formData.entries(); // array of entries
+  const data = Object.fromEntries(entries);
+  console.log(data);
+  const restaurant = data.restaurant;
+  getReservation(restaurant);
 }
-
 
 createCards();
 
-let getReservation = () => {
-  console.log("hi");
-  console.log(arr);
+let getReservation = (restaurant) => {
+  console.log(restaurant);
 };
-
-let button = document.getElementById("contact-submit");
 
 setTimeout(() => {
   alert("Hi, here you can book a site");
