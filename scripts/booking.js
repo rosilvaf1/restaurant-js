@@ -99,29 +99,35 @@ order_input.addEventListener("input", updateValueOrder);
 function updateValueOrder(e) {
   order.textContent = e.target.value;
 }
+class Restaurant {
+  constructor(name, description, reservation, image) {
+    this.name = name;
+    this.description = description;
+    this.reservation = reservation;
+    this.image = image;
+  }
 
-function createCards() {
-  for (i = 0; i < restaurants.length; i++) {
+  createCards() {
     const div = document.createElement("div");
     div.setAttribute("class", "card");
     document.getElementById("group-cards").appendChild(div);
-    const title = document.createElement("h1");
-    title.innerHTML = `${restaurants[i].name}`;
-    const text = document.createElement("p");
-    text.innerHTML = `${restaurants[i].description}`;
-    const img = document.createElement("img");
-    img.setAttribute("src", `${restaurants[i].image}`);
-    const legend = document.createElement("h4");
-    legend.setAttribute("id", `legend_${restaurants[i].name}`);
-    legend.innerHTML = `reservations: ${restaurants[i].reservation} `;
-    div.appendChild(title);
-    div.appendChild(text);
-    div.appendChild(img);
-    div.appendChild(legend);
+    div.innerHTML = `<h1>${this.name}</h1>
+    <p>${this.description}</p>
+    <img src ="${this.image}">
+    <h4 id ="legend_${this.name}">reservations: ${this.reservation}</h4>`;
   }
 }
+for (i = 0; i < restaurants.length; i++) {
+  let restaurant = restaurants[i];
+  const values = Object.values(restaurant)
+  const new_restaurant = new Restaurant(
+    values[1],
+    values[5],
+    values[6],
+    values[2]
+  );
+  new_restaurant.createCards();
 
-createCards();
 
 const form = document.forms[0];
 form.addEventListener("submit", createReservation);
@@ -152,10 +158,11 @@ let closeReservation = (restaurantsRervation) => {
   if (restaurantsRervation.reservation > totalReservation) {
     console.log("hi");
   }
-  delete restaurantsRervation;
+
   console.log(restaurants);
 };
 
 setTimeout(() => {
   alert("Hi, here you can book a site");
 }, 20);
+}

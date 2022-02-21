@@ -3,11 +3,7 @@ class Opinions {
     this.name = name;
     this.opinion = opinion;
   }
-
-  showOpinions() {
-    console.log(`${this.name} : ${this.opinion}`);
-  }
-
+  
   createCards() {
     const div = document.createElement("div");
     div.setAttribute("class", "speech");
