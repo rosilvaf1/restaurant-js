@@ -106,6 +106,7 @@ function createCards() {
     const img = document.createElement("img");
     img.setAttribute("src", `${restaurants[i].image}`);
     const legend = document.createElement("h4");
+    legend.setAttribute('id',  `legend_${restaurants[i].name}`)
     legend.innerHTML = `reservations: ${restaurants[i].reservation} `;
     div.appendChild(title);
     div.appendChild(text);
@@ -113,6 +114,11 @@ function createCards() {
     div.appendChild(legend);
   }
 }
+
+
+createCards();
+
+
 const form = document.forms[0];
 form.addEventListener("submit", createReservation);
 
@@ -121,16 +127,26 @@ function createReservation(event) {
   const formData = new FormData(this);
   const entries = formData.entries(); // array of entries
   const data = Object.fromEntries(entries);
-  console.log(data);
   const restaurant = data.restaurant;
   getReservation(restaurant);
 }
 
-createCards();
-
 let getReservation = (restaurant) => {
-  console.log(restaurant);
+  const restaurantsRervation = restaurants.find(item => 
+    item.name == restaurant
+  );
+  const numberReservations = Number(restaurantsRervation.reservation) 
+  restaurantsRervation.reservation =  numberReservations +1;
+  document.getElementById(`legend_${restaurantsRervation.name}`).innerHTML=`reservations:${restaurantsRervation.reservation}`;
+  closeReservation(restaurantsRervation);
 };
+
+let closeReservation = (restaurantsRervation) =>{
+  const totalReservation = 10;
+  if(restaurantsRervation.reservation>totalReservation){console.log('hi')}
+  delete(restaurantsRervation);
+  console.log(restaurants)
+}
 
 setTimeout(() => {
   alert("Hi, here you can book a site");
