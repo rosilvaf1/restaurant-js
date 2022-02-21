@@ -116,10 +116,12 @@ class Restaurant {
     <img src ="${this.image}">
     <h4 id ="legend_${this.name}">reservations: ${this.reservation}</h4>`;
   }
+
 }
+
 for (i = 0; i < restaurants.length; i++) {
   let restaurant = restaurants[i];
-  const values = Object.values(restaurant)
+  const values = Object.values(restaurant);
   const new_restaurant = new Restaurant(
     values[1],
     values[5],
@@ -127,42 +129,39 @@ for (i = 0; i < restaurants.length; i++) {
     values[2]
   );
   new_restaurant.createCards();
+  }
+  const form = document.forms[0];
+  form.addEventListener("submit", createReservation);
 
-
-const form = document.forms[0];
-form.addEventListener("submit", createReservation);
-
-function createReservation(event) {
-  event.preventDefault();
-  const formData = new FormData(this);
-  const entries = formData.entries(); // array of entries
-  const data = Object.fromEntries(entries);
-  const restaurant = data.restaurant;
-  getReservation(restaurant);
-}
-
-let getReservation = (restaurant) => {
-  const restaurantsRervation = restaurants.find(
-    (item) => item.name == restaurant
-  );
-  const numberReservations = Number(restaurantsRervation.reservation);
-  restaurantsRervation.reservation = numberReservations + 1;
-  document.getElementById(
-    `legend_${restaurantsRervation.name}`
-  ).innerHTML = `reservations:${restaurantsRervation.reservation}`;
-  closeReservation(restaurantsRervation);
-};
-
-let closeReservation = (restaurantsRervation) => {
-  const totalReservation = 10;
-  if (restaurantsRervation.reservation > totalReservation) {
-    console.log("hi");
+  function createReservation(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    const entries = formData.entries(); // array of entries
+    const data = Object.fromEntries(entries);
+    const restaurant = data.restaurant;
+    getReservation(restaurant);
   }
 
-  console.log(restaurants);
-};
+  let getReservation = (restaurant) => {
+    const restaurantsRervation = restaurants.find(
+      (item) => item.name == restaurant
+    );
+    const numberReservations = Number(restaurantsRervation.reservation);
+    restaurantsRervation.reservation = numberReservations + 1;
+    document.getElementById(
+      `legend_${restaurantsRervation.name}`
+    ).innerHTML = `reservations:${restaurantsRervation.reservation}`;
+    closeReservation(restaurantsRervation);
+  };
 
-setTimeout(() => {
-  alert("Hi, here you can book a site");
-}, 20);
-}
+  let closeReservation = (restaurantsRervation) => {
+    const totalReservation = 10;
+    if (restaurantsRervation.reservation > totalReservation) {
+      console.log("hi");
+    }
+    console.log(restaurants);
+  };
+  setTimeout(() => {
+    alert("Hi, here you can book a site");
+  }, 20);
+
