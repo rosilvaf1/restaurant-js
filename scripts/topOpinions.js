@@ -113,6 +113,5 @@ function submit(event) {
   function deleteClick(){
     const speech = document.getElementById(`${data.opinion}_${data.name}`);
     speech.remove();
-     
   }
 }

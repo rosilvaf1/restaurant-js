@@ -9,6 +9,7 @@ const order = document.getElementById("value_order");
 const arr = [];
 const restaurants = [
   {
+    id: "1",
     name: "Angus Steakhouse Oxford Circus",
     image:
       "https://media-cdn.tripadvisor.com/media/photo-s/0b/31/3f/0b/great-location-just-off.jpg",
@@ -19,6 +20,7 @@ const restaurants = [
     reservation: "4",
   },
   {
+    id: "2",
     name: "Bybrook Restaurant",
     image:
       "https://www.turningleftforless.com/wp-content/uploads/2016/12/IMG_1722-2-1024x768.jpg",
@@ -29,6 +31,7 @@ const restaurants = [
     reservation: "8",
   },
   {
+    id: "3",
     name: "Launceston Place",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxJESg0RhWfNqIpotWjbN6qoMrBtni97pg2vtVWM1db8BSbGwuncKQsa8CbrVkRVdp3VM&usqp=CAU",
@@ -39,6 +42,7 @@ const restaurants = [
     reservation: "7",
   },
   {
+    id: "4",
     name: "Bar 61 Restaurant",
     image:
       "https://media-cdn.tripadvisor.com/media/photo-s/15/2b/65/de/ort-cafe.jpg",
@@ -49,6 +53,7 @@ const restaurants = [
     reservation: "0",
   },
   {
+    id: "5",
     name: "Ekte Nordic Kitchen",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCrsNqpcc_2G42e1Sq7k6SvYoTmaOH439U51GUrPVhjdjJphs0JDvHuPYXR9kKde6qma0&usqp=CAU",
@@ -59,6 +64,7 @@ const restaurants = [
     reservation: "10",
   },
   {
+    id: "6",
     name: "Wiltons Restaurant",
     image:
       "https://cdn.thegentlemansjournal.com/wp-content/uploads/2017/10/andy-hayler-wiltons-outside-w709-h532-664x442-c-center.jpg",
@@ -106,7 +112,7 @@ function createCards() {
     const img = document.createElement("img");
     img.setAttribute("src", `${restaurants[i].image}`);
     const legend = document.createElement("h4");
-    legend.setAttribute('id',  `legend_${restaurants[i].name}`)
+    legend.setAttribute("id", `legend_${restaurants[i].name}`);
     legend.innerHTML = `reservations: ${restaurants[i].reservation} `;
     div.appendChild(title);
     div.appendChild(text);
@@ -115,9 +121,7 @@ function createCards() {
   }
 }
 
-
 createCards();
-
 
 const form = document.forms[0];
 form.addEventListener("submit", createReservation);
@@ -132,21 +136,25 @@ function createReservation(event) {
 }
 
 let getReservation = (restaurant) => {
-  const restaurantsRervation = restaurants.find(item => 
-    item.name == restaurant
+  const restaurantsRervation = restaurants.find(
+    (item) => item.name == restaurant
   );
-  const numberReservations = Number(restaurantsRervation.reservation) 
-  restaurantsRervation.reservation =  numberReservations +1;
-  document.getElementById(`legend_${restaurantsRervation.name}`).innerHTML=`reservations:${restaurantsRervation.reservation}`;
+  const numberReservations = Number(restaurantsRervation.reservation);
+  restaurantsRervation.reservation = numberReservations + 1;
+  document.getElementById(
+    `legend_${restaurantsRervation.name}`
+  ).innerHTML = `reservations:${restaurantsRervation.reservation}`;
   closeReservation(restaurantsRervation);
 };
 
-let closeReservation = (restaurantsRervation) =>{
+let closeReservation = (restaurantsRervation) => {
   const totalReservation = 10;
-  if(restaurantsRervation.reservation>totalReservation){console.log('hi')}
-  delete(restaurantsRervation);
-  console.log(restaurants)
-}
+  if (restaurantsRervation.reservation > totalReservation) {
+    console.log("hi");
+  }
+  delete restaurantsRervation;
+  console.log(restaurants);
+};
 
 setTimeout(() => {
   alert("Hi, here you can book a site");
