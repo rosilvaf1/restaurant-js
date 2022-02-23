@@ -81,13 +81,14 @@ function updateValueName(e) {
   log.textContent = e.target.value;
 }
 
-input_restaurant.addEventListener("input", updateValueRestaurant);
+let  value = input_restaurant.options[input_restaurant.selectedIndex].value
+console.log(value)
+/*input_restaurant.addEventListener("input", updateValueRestaurant);
 
 function updateValueRestaurant(e) {
   restaurant.textContent = e.target.value;
-  arr.push(restaurant.textContent);
 }
-
+*/
 input_date.addEventListener("input", updateValueDate);
 
 function updateValueDate(e) {
@@ -116,7 +117,6 @@ class Restaurant {
     <img src ="${this.image}">
     <h4 id ="legend_${this.name}">reservations: ${this.reservation}</h4>`;
   }
-
 }
 
 for (i = 0; i < restaurants.length; i++) {
@@ -129,39 +129,38 @@ for (i = 0; i < restaurants.length; i++) {
     values[2]
   );
   new_restaurant.createCards();
-  }
-  const form = document.forms[0];
-  form.addEventListener("submit", createReservation);
+}
+const form = document.forms[0];
+form.addEventListener("submit", createReservation);
 
-  function createReservation(event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    const entries = formData.entries(); // array of entries
-    const data = Object.fromEntries(entries);
-    const restaurant = data.restaurant;
-    getReservation(restaurant);
-  }
+function createReservation(event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+  const entries = formData.entries(); // array of entries
+  const data = Object.fromEntries(entries);
+  getReservation(data);
+  console.log(data);
+}
 
-  let getReservation = (restaurant) => {
-    const restaurantsRervation = restaurants.find(
-      (item) => item.name == restaurant
-    );
+let getReservation = (data) => {
+  const restaurant = data.restaurant;
+  const restaurantsRervation = restaurants.find(
+    (item) => item.name == restaurant
+  );
+  const totalReservation = 10;
     const numberReservations = Number(restaurantsRervation.reservation);
     restaurantsRervation.reservation = numberReservations + 1;
+    if (restaurantsRervation.reservation > totalReservation) {
+      alert("No vacancy in this restaurant");
+    }else{
+    data.reservation = restaurantsRervation;
     document.getElementById(
       `legend_${restaurantsRervation.name}`
     ).innerHTML = `reservations:${restaurantsRervation.reservation}`;
-    closeReservation(restaurantsRervation);
-  };
-
-  let closeReservation = (restaurantsRervation) => {
-    const totalReservation = 10;
-    if (restaurantsRervation.reservation > totalReservation) {
-      console.log("hi");
-    }
     console.log(restaurants);
-  };
-  setTimeout(() => {
-    alert("Hi, here you can book a site");
-  }, 20);
+    }
+};
 
+setTimeout(() => {
+  alert("Hi, here you can book a site");
+}, 20);
