@@ -6,7 +6,6 @@ const input_date = document.getElementById("start");
 const date = document.getElementById("value_date");
 const order_input = document.getElementById("input_order");
 const order = document.getElementById("value_order");
-const arr = [];
 const restaurants = [
   {
     id: "1",
@@ -81,14 +80,11 @@ function updateValueName(e) {
   log.textContent = e.target.value;
 }
 
-let  value = input_restaurant.options[input_restaurant.selectedIndex].value
-console.log(value)
-/*input_restaurant.addEventListener("input", updateValueRestaurant);
-
-function updateValueRestaurant(e) {
-  restaurant.textContent = e.target.value;
+function val() {
+  d = document.getElementById("restaurant").value;
+  restaurant.innerHTML = d;
 }
-*/
+
 input_date.addEventListener("input", updateValueDate);
 
 function updateValueDate(e) {
@@ -100,6 +96,7 @@ order_input.addEventListener("input", updateValueOrder);
 function updateValueOrder(e) {
   order.textContent = e.target.value;
 }
+
 class Restaurant {
   constructor(name, description, reservation, image) {
     this.name = name;
@@ -148,17 +145,17 @@ let getReservation = (data) => {
     (item) => item.name == restaurant
   );
   const totalReservation = 10;
-    const numberReservations = Number(restaurantsRervation.reservation);
-    restaurantsRervation.reservation = numberReservations + 1;
-    if (restaurantsRervation.reservation > totalReservation) {
-      alert("No vacancy in this restaurant");
-    }else{
+  const numberReservations = Number(restaurantsRervation.reservation);
+  restaurantsRervation.reservation = numberReservations + 1;
+  if (restaurantsRervation.reservation > totalReservation) {
+    alert("No vacancy in this restaurant");
+  } else {
     data.reservation = restaurantsRervation;
     document.getElementById(
       `legend_${restaurantsRervation.name}`
     ).innerHTML = `reservations:${restaurantsRervation.reservation}`;
     console.log(restaurants);
-    }
+  }
 };
 
 setTimeout(() => {

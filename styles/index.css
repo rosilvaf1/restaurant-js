@@ -30,6 +30,13 @@ header nav ul li {
 header nav section i {
   font-size: 40px;
 }
+.weather{
+  width: 380px; 
+  height: 53px; 
+  margin-left: 79vw;
+  border: 3px solid black;
+  background: white;
+}
 .home-images {
   display: flex;
   flex-direction: row;

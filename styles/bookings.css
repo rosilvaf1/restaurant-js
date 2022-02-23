@@ -11,6 +11,7 @@ header {
   background-color: #586b8a;
   padding-bottom: 20px;
   color: black;
+  padding-top: 40px;
 }
 header h2 {
   font-size: 40px;
@@ -19,6 +20,12 @@ header nav ul {
   display: flex;
   float: right;
   margin: 0px 20px;
+}
+.weather{
+  width: 250px; 
+  height: 100px; 
+  border: 3px solid #555;
+  background: white;
 }
 header nav ul li {
   text-decoration: none;
