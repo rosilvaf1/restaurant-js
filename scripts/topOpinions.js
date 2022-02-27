@@ -8,7 +8,7 @@ class Opinions {
   createCards() {
     const div = document.createElement("div");
     div.setAttribute("class", "speech");
-    div.setAttribute('id',`${this.opinion}_${this.name}`)
+    div.setAttribute("id", `${this.opinion}_${this.name}`);
     document.getElementById("opinions").appendChild(div);
     const title = document.createElement("h1");
     title.innerHTML = `${this.name}`;
@@ -22,14 +22,14 @@ class Opinions {
     div.appendChild(icon_delete);
   }
 
-  deleteClickCards(){
+  deleteClickCards() {
     const id = `${this.opinion}_${this.name}`;
-   
+
     document
-    .getElementById(`trash_${this.opinion}_${this.name}`)
-    .addEventListener("click", function () {
-      deleteOpinion(id);
-    });
+      .getElementById(`trash_${this.opinion}_${this.name}`)
+      .addEventListener("click", function () {
+        deleteOpinion(id);
+      });
     function deleteOpinion(id) {
       const opinionDeleted = peopleOpinion.findIndex((item) => item.id == id);
       console.log(opinionDeleted);
@@ -38,9 +38,8 @@ class Opinions {
       const speech = document.getElementById(id);
       speech.remove();
     }
-      
   }
-  
+
   creteCardsEditables() {
     const div = document.createElement("div");
     div.setAttribute("class", "speech");
@@ -112,35 +111,53 @@ function submit(event) {
   const new_opinion = new Opinions(data.id, data.name, data.opinion);
   new_opinion.creteCardsEditables();
   const id = `${data.opinion}_${data.name}`;
-  document.getElementById("button_edit").addEventListener("click", function () {
-    editOpinion();
-  });
-  document
-    .getElementById("button_accept")
-    .addEventListener("click", function () {
-      acceptClick();
-    });
-  document.getElementById("trash_bin").addEventListener("click", deleteClick);
+  const opinionDeleted = peopleOpinion.find((item) => item.id == id);
+  console.log(opinionDeleted)
+  if (id == opinionDeleted) {
+    alert("There is an opinion and user equal to yours");
+  } else {
+    document
+      .getElementById("button_edit")
+      .addEventListener("click", function () {
+        editOpinion();
+      });
+    document
+      .getElementById("button_accept")
+      .addEventListener("click", function () {
+        acceptClick();
+      });
+    document.getElementById("trash_bin").addEventListener("click", deleteClick);
 
-  function editOpinion() {
-    console.log(id);
-    const speech = document.getElementById(`${data.opinion}_${data.name}`);
-    const input_edit = document.createElement("input");
-    input_edit.setAttribute("id", "input_edit");
-    input_edit.value = `${data.opinion}`;
-    speech.appendChild(input_edit);
-    console.log(data.opinion + "_" + data.name);
-    input_edit.addEventListener("input", updateValueOrder);
-    document.getElementById("button_edit").remove();
+    function editOpinion() {
+      console.log(id);
+      const speech = document.getElementById(`${data.opinion}_${data.name}`);
+      const input_edit = document.createElement("input");
+      input_edit.setAttribute("id", "input_edit");
+      document.getElementById("button_accept").remove();
+      document.getElementById("button_edit").remove();
+      const button_accept_edit = document.createElement("button");
+      button_accept_edit.innerHTML = "Accept";
+      button_accept_edit.setAttribute("id", "button_accept_edit");
+      input_edit.value = `${data.opinion}`;
+      speech.appendChild(input_edit);
+      const group = document.getElementById("group_buttons");
+      speech.appendChild(group);
+      group.appendChild(button_accept_edit);
+      console.log(data.opinion + "_" + data.name);
+      input_edit.addEventListener("input", updateValueOrder);
 
-    function updateValueOrder(e) {
-      document.getElementById("opinion").textContent = e.target.value;
+      function updateValueOrder(e) {
+        document.getElementById("opinion").textContent = e.target.value;
+      }
 
       document
-        .getElementById("button_accept")
+        .getElementById("button_accept_edit")
         .addEventListener("click", editAccept);
       function editAccept(e) {
         input_edit.remove();
+        document.getElementById("button_accept_edit").remove();
+        document.getElementById("trash_bin").remove();
+        console.log("hi");
         const new_opinion = new Opinions(data.id, data.name, input_edit.value);
         const opinion = {
           id: data.id,
@@ -151,45 +168,46 @@ function submit(event) {
         icons();
       }
     }
-  }
-  function acceptClick() {
-    const new_opinion = {
-      id: data.opinion + "_" + data.name,
-      name: data.name,
-      opinion: data.opinion,
-    };
-    console.log(new_opinion);
-    peopleOpinion.push(new_opinion);
-    console.log(peopleOpinion);
-    icons();
-    const group = document.getElementById("group_buttons");
-    group.parentElement.removeChild(group);
-  }
-  function deleteClick() {
-    const speech = document.getElementById(`${data.opinion}_${data.name}`);
-    speech.remove();
-  }
 
-  function icons() {
-    const speech = document.getElementById(id);
-    const icon_delete = document.createElement("i");
-    icon_delete.setAttribute("class", "fa fa-trash");
-    icon_delete.setAttribute("id", `trash_${data.opinion}_${data.name}`);
-    speech.appendChild(icon_delete);
-    document
-      .getElementById(`trash_${data.opinion}_${data.name}`)
-      .addEventListener("click", function () {
-        deleteOpinion(id);
-      });
-  }
- 
-}
+    function acceptClick() {
+      const new_opinion = {
+        id: data.opinion + "_" + data.name,
+        name: data.name,
+        opinion: data.opinion,
+      };
+      console.log(new_opinion);
+      peopleOpinion.push(new_opinion);
+      console.log(peopleOpinion);
+      const group = document.getElementById("group_buttons");
+      group.remove();
+      icons();
+    }
+    function deleteClick() {
+      const speech = document.getElementById(`${data.opinion}_${data.name}`);
+      speech.remove();
+    }
 
-function deleteOpinion(id) {
-  const opinionDeleted = peopleOpinion.findIndex((item) => item.id == id);
-  console.log(opinionDeleted);
-  peopleOpinion.splice(opinionDeleted, 1);
-  console.log(peopleOpinion);
-  const speech = document.getElementById(id);
-  speech.remove();
+    function icons() {
+      console.log("hi2");
+      const speech = document.getElementById(id);
+      const icon_delete = document.createElement("i");
+      icon_delete.setAttribute("class", "fa fa-trash");
+      icon_delete.setAttribute("id", `trash_${data.opinion}_${data.name}`);
+      speech.appendChild(icon_delete);
+      document
+        .getElementById(`trash_${data.opinion}_${data.name}`)
+        .addEventListener("click", function () {
+          deleteOpinion(id);
+        });
+    }
+
+    function deleteOpinion(id) {
+      const opinionDeleted = peopleOpinion.findIndex((item) => item.id == id);
+      console.log(opinionDeleted);
+      peopleOpinion.splice(opinionDeleted, 1);
+      console.log(peopleOpinion);
+      const speech = document.getElementById(id);
+      speech.remove();
+    }
+  }
 }

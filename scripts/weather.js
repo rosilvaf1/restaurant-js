@@ -4,9 +4,9 @@ let weather = {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=London&appid=" +
         this.apiKey
-    ).then(response => response.json())
-    .then(data => this.displayWeather(data));
-  
+    )
+      .then((response) => response.json())
+      .then((data) => this.displayWeather(data));
   },
   displayWeather: function (data) {
     const { name } = data;
@@ -14,6 +14,10 @@ let weather = {
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
     console.log(name, icon, description, temp, humidity, speed);
-    document.getElementById('weather').innerHTML = name;
+    const city = document.getElementById("weather");
+    city.innerHTML = `<p>${name}</p>
+    <p id="temperature">${temp}ªC</p>
+    <img src ="https://openweathermap.org/img/wn/${icon}.png">`;
   },
 };
+weather.fetchWeather();

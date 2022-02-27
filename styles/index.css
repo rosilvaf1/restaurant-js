@@ -31,12 +31,22 @@ header nav section i {
   font-size: 40px;
 }
 #weather{
-  width: 380px; 
+  width: 370px; 
   height: 53px; 
   margin-left: 79vw;
   border: 3px solid black;
-  background: white;
-  font-size: 35px;
+  background: black;
+  color: white;
+  font-size: 29px;
+  margin-right: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#weather p{
+  padding-left: 20px;
+}
+#weather img{
+  padding-left: 40px;
 }
 .home-images {
   display: flex;
