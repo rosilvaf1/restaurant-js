@@ -13,7 +13,6 @@ let weather = {
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
-    console.log(name, icon, description, temp, humidity, speed);
     const city = document.getElementById("weather");
     city.innerHTML = `<p>${name}</p>
     <p id="temperature">${temp}ªC</p>

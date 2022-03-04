@@ -65,8 +65,8 @@ main > section > .opinions-title {
 }
 input,
 textarea {
-  width: 98vh;
-  height: 6vh;
+  width: 600px;
+  height: 100px;
   border: solid 2px black;
 }
 #contact-submit {
@@ -125,6 +125,9 @@ fieldset {
 p {
   font-size: 20px;
 }
+i {
+  font-weight: 900;
+}
 #group_buttons {
   display: grid;
   margin-top: 30px;
@@ -145,7 +148,7 @@ p {
   height: 50px;
 }
 
-#button_accept_edit {
+.button_accept {
   color: white;
   font-size: 20px;
   background-color: green;
@@ -159,10 +162,7 @@ p {
   width: 120px;
   height: 50px;
 }
-.input_edit{
-  margin-top: -60vh  !important;
-  width: 600px;
-}
+
 .fa-solid {
   width: 50px;
   height: 40px;

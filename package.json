@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rosilvaf1/english-restaurants-ui/issues"
   },
-  "homepage": "https://github.com/rosilvaf1/english-restaurants-ui#readme"
+  "homepage": "https://github.com/rosilvaf1/english-restaurants-ui#readme",
+  "dependencies": {
+    "requirejs": "^2.3.6"
+  }
 }
