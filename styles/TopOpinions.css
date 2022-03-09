@@ -9,11 +9,14 @@ body {
 header {
   font-family: "Lobster Two", cursive;
   background-color: #586b8a;
-  padding-bottom: 20px;
+  margin-left: -20px;
+  margin-top: -20px;
   color: black;
+  padding-bottom: 10px;
 }
 header h2 {
   font-size: 40px;
+  margin-left: 20px;
 }
 header nav ul {
   display: flex;
@@ -22,9 +25,9 @@ header nav ul {
 }
 header nav ul li {
   text-decoration: none;
-  margin-right: 60px;
+  margin-right: 30px;
   font-size: 29px;
-  margin-top: -40px;
+  margin-top: -80px;
   list-style: none;
 }
 header nav section i {
@@ -46,7 +49,7 @@ main > section > .opinions-title {
   font-family: "Lobster Two", cursive;
   font-size: 2em;
   text-indent: 0.5em;
-  margin-top: -6em;
+  margin-top: -7em;
 }
 .opinions-clients {
   display: flex;
@@ -63,27 +66,35 @@ main > section > .opinions-title {
   margin-top: 20px;
   margin-left: 150px;
 }
-input,
-textarea {
+input{
   width: 600px;
-  height: 100px;
+  height: 50px;
   border: solid 2px black;
+}
+
+textarea {
+  margin-top: 20px;
+  width: 600px;
+  height: 120px;
+  border: solid 2px black;
+  resize: none;  
 }
 #contact-submit {
   font-family: "Lobster Two", cursive;
   font-size: 1em;
+  width: 170px;
   margin-top: 20px;
   margin-left: 840px;
   background-color: white;
 }
 #input_order {
-  height: 10vh;
+  height: 200px;
 }
 fieldset {
-  padding-right: 2vw;
-  padding-left: 2vw;
-  padding-bottom: 1vw;
-  width: 760px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: 560px;
   border: solid 2px black;
 }
 .speech {
@@ -126,7 +137,8 @@ p {
   font-size: 20px;
 }
 i {
-  font-weight: 900;
+  margin-top: 30px;
+  margin-left: 40px;
 }
 #group_buttons {
   display: grid;
@@ -171,7 +183,8 @@ i {
 #weather{
   width: 370px; 
   height: 53px; 
-  margin-left: 79vw;
+  margin-left: 1480px;
+  margin-top: 20px;
   border: 3px solid black;
   background: black;
   color: white;
@@ -182,6 +195,7 @@ i {
 }
 #weather p{
   padding-left: 20px;
+  font-size: 28px;
 }
 #weather img{
   padding-left: 40px;

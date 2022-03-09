@@ -50,9 +50,9 @@ class Opinions {
       const copyText = opinion;
       navigator.clipboard.writeText(copyText)
     });
-    edit.addEventListener("click", function (event) {
+    edit.addEventListener("click", function (e) {
       console.log(opinion);
-      event.preventDefault();
+      e.preventDefault();
       const input_edit = document.createElement("textarea");
       input_edit.setAttribute("id", `input_${this.id}`);
       document.getElementById(id).appendChild(input_edit);

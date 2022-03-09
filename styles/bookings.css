@@ -11,7 +11,6 @@ header {
   background-color: #586b8a;
   padding-bottom: 20px;
   color: black;
-  padding-top: 40px;
 }
 header h2 {
   font-size: 40px;
@@ -20,12 +19,6 @@ header nav ul {
   display: flex;
   float: right;
   margin: 0px 20px;
-}
-.weather{
-  width: 250px; 
-  height: 100px; 
-  border: 3px solid #555;
-  background: white;
 }
 header nav ul li {
   text-decoration: none;
@@ -61,8 +54,8 @@ button {
 }
 input,
 textarea {
-  width: 70vh;
-  height: 5vh;
+  width: 550px;
+  height: 40px;
   border: solid 2px black;
 }
 fieldset {
@@ -83,7 +76,7 @@ fieldset {
 .card {
   display: flex;
   flex-direction: column;
- margin: 2vw;
+  margin: 2vw;
   border: solid 2px black;
   background-color: white;
 }
@@ -126,15 +119,15 @@ h1 {
   width: 280px;
   height: 160px;
 }
-#restaurant{
+#restaurant {
   width: 70vh;
   height: 32px;
   border: solid 2px black;
 }
-#weather{
-  width: 370px; 
-  height: 53px; 
-  margin-left: 79vw;
+#weather {
+  width: 370px;
+  height: 53px;
+  margin-left:  1467px;
   border: 3px solid black;
   background: black;
   color: white;
@@ -143,9 +136,9 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#weather p{
+#weather p {
   padding-left: 20px;
 }
-#weather img{
+#weather img {
   padding-left: 40px;
 }
