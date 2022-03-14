@@ -52,10 +52,20 @@ button {
   margin-left: 440px;
   background-color: white;
 }
-input,
-textarea {
+input{
   width: 550px;
   height: 40px;
+  border: solid 2px black;
+}
+#restaurant{
+  width: 550px;
+  height: 40px;
+  border: solid 2px black;
+}
+textarea{
+  resize: none;
+  width: 550px;
+  height: 80px;
   border: solid 2px black;
 }
 fieldset {
@@ -86,20 +96,25 @@ fieldset {
   width: 480px;
   margin-left: 2vw;
   margin-right: 2vw;
+  font-family: 'Sansita Swashed', cursive;
   border: solid 2px black;
   background-color: white;
 }
 .card-order h3,
 #values {
+  font-family: 'Sansita Swashed', cursive;
   margin-top: 10px;
   margin-left: 20px;
 }
 .card-order h5 {
+  font-family: 'Roboto', sans-serif;
   margin-left: 12px;
 }
 .card-order #value_order {
   margin-left: 30px;
   margin-top: 10px;
+  font-family: 'Sansita Swashed', cursive;
+
 }
 .card-order .order {
   margin-left: 30px;
@@ -107,22 +122,17 @@ fieldset {
 }
 .card p,
 h1 {
-  font-family: "Lobster Two", cursive;
+  font-family: 'Sansita Swashed', cursive;
   font-size: 23px;
 }
 .card h4 {
-  font-family: "Lobster Two", cursive;
+  font-family: 'Sansita Swashed', cursive;
   font-size: 23px;
   margin-left: 330px;
 }
 .card img {
   width: 280px;
   height: 160px;
-}
-#restaurant {
-  width: 70vh;
-  height: 32px;
-  border: solid 2px black;
 }
 #weather {
   width: 370px;

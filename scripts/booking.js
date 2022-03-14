@@ -1,44 +1,10 @@
-const input_name = document.getElementById("input_name");
-const log = document.getElementById("values");
-const input_restaurant = document.getElementById("input_restaurant");
-const restaurant = document.getElementById("value_restaurant");
-const input_date = document.getElementById("start");
-const date = document.getElementById("value_date");
-const order_input = document.getElementById("input_order");
-const order = document.getElementById("value_order");
+import changesValues from "./functionForm/functionForm.js";
+import bookingAlert from "./modals/modals.js";
+import restaurants from "../data/data.js";
 
-import { bookingAlert } from "./modals/modals";
-import { restaurants } from "../data/data";
-
-console.log(restaurants)
-
-//refactorizacion de funciones
-//ver babel / require
-//ver vh
-
-input_name.addEventListener("input", updateValueName);
-
-function updateValueName(e) {
-  log.textContent = e.target.value;
-}
-
-function val() {
-  d = document.getElementById("restaurant").value;
-  restaurant.innerHTML = d;
-}
-
-input_date.addEventListener("input", updateValueDate);
-
-function updateValueDate(e) {
-  date.textContent = e.target.value;
-}
-
-order_input.addEventListener("input", updateValueOrder);
-
-function updateValueOrder(e) {
-  order.textContent = e.target.value;
-}
-
+//import function changevalues
+changesValues();
+//create create Restaurant
 class Restaurant {
   constructor(name, description, reservation, image) {
     this.name = name;
@@ -46,7 +12,7 @@ class Restaurant {
     this.reservation = reservation;
     this.image = image;
   }
-
+//create method createCards
   createCards() {
     const div = document.createElement("div");
     div.setAttribute("class", "card");
@@ -54,11 +20,11 @@ class Restaurant {
     div.innerHTML = `<h1>${this.name}</h1>
     <p>${this.description}</p>
     <img src ="${this.image}">
-    <h4 id ="legend_${this.name}">reservations: ${this.reservation}</h4>`;
+    <h4 id ="legend_${this.name}">Reservations: ${this.reservation}</h4>`;
   }
 }
-
-for (i = 0; i < restaurants.length; i++) {
+//loop a array of restaurant to create cards of restaurants using the method createCards
+for (let i = 0; i < restaurants.length; i++) {
   let restaurant = restaurants[i];
   const new_restaurant = new Restaurant(
     restaurant.name,
@@ -69,21 +35,18 @@ for (i = 0; i < restaurants.length; i++) {
   new_restaurant.createCards();
 }
 
-//objeto. atributo
-//objeto['atributo']
-
 const form = document.forms[0];
-form.addEventListener("submit", createReservation);
 
+//get data of the form in order to modificated the amount of reservation of the selected restaurant
+form.addEventListener("submit", createReservation);
 function createReservation(event) {
   event.preventDefault();
   const formData = new FormData(this);
   const entries = formData.entries(); // array of entries
   const data = Object.fromEntries(entries);
   getReservation(data);
-  console.log(data);
 }
-
+//funtion to modificate the amount showed in the card of restaurant
 const getReservation = (data) => {
   const restaurant = data.restaurant;
   const restaurantsRervation = restaurants.find(
@@ -92,14 +55,14 @@ const getReservation = (data) => {
   const totalReservation = 10;
   const numberReservations = Number(restaurantsRervation.reservation);
   restaurantsRervation.reservation = numberReservations + 1;
+  //if the reservations are more than 10 reservations, show an alert that says that there is no vancancy, else, reserve and change the number in the card
   if (restaurantsRervation.reservation > totalReservation) {
     alert("No vacancy in this restaurant");
   } else {
     data.reservation = restaurantsRervation;
     document.getElementById(
       `legend_${restaurantsRervation.name}`
-    ).innerHTML = `reservations:${restaurantsRervation.reservation}`;
-    console.log(restaurants);
+    ).innerHTML = `Reservations:${restaurantsRervation.reservation}`;
   }
 };
 

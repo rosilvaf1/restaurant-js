@@ -1,4 +1,4 @@
-export const restaurants = [
+const restaurants = [
   {
     id: "1",
     name: "Angus Steakhouse Oxford Circus",
@@ -66,3 +66,5 @@ export const restaurants = [
     reservation: "3",
   },
 ];
+
+export default restaurants;

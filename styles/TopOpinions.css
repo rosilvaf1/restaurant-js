@@ -97,6 +97,21 @@ fieldset {
   width: 560px;
   border: solid 2px black;
 }
+.star-box{
+  margin-left: 1200px;
+  margin-top: -200px;
+  background-color: white;
+  width:500px;
+  height:290px;
+  border:  solid black 2px;
+}
+.star-box ul{
+  font-family: "Lobster Two", cursive;
+  list-style: none;
+}
+.star-box ul li{
+  margin-top: -10px;
+}
 .speech {
   position: relative;
   padding: 30px;
