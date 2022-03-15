@@ -1,5 +1,5 @@
 import changesValues from "./functionForm/functionForm.js";
-import bookingAlert from "./modals/modals.js";
+import bookingAlert from "./alert/alert.js";
 import restaurants from "../data/data.js";
 
 //import function changevalues
