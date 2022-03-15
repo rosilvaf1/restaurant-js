@@ -37,7 +37,7 @@ class Opinions {
     div.appendChild(iconPaste);
     this.actionsButtons(this.id, this.opinion);
   }
-//method with the actions of the action of buttons
+//method with the actions of the buttons
   actionsButtons(id, opinion) {
     const trash = document.getElementById(`trash_${this.id}`);
     const edit = document.getElementById(`update_${this.id}`);
