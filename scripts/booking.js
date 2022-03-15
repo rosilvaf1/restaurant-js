@@ -12,7 +12,7 @@ class Restaurant {
     this.reservation = reservation;
     this.image = image;
   }
-//create method createCards
+//create method createCards in order to create cards
   createCards() {
     const div = document.createElement("div");
     div.setAttribute("class", "card");
@@ -26,18 +26,18 @@ class Restaurant {
 //loop a array of restaurant to create cards of restaurants using the method createCards
 for (let i = 0; i < restaurants.length; i++) {
   let restaurant = restaurants[i];
-  const new_restaurant = new Restaurant(
+  const newRestaurant = new Restaurant(
     restaurant.name,
     restaurant.description,
     restaurant.reservation,
     restaurant.image
   );
-  new_restaurant.createCards();
+  newRestaurant.createCards();
 }
 
 const form = document.forms[0];
 
-//get data of the form in order to modificated the amount of reservation of the selected restaurant
+//get data of the form 
 form.addEventListener("submit", createReservation);
 function createReservation(event) {
   event.preventDefault();
@@ -65,5 +65,5 @@ const getReservation = (data) => {
     ).innerHTML = `Reservations:${restaurantsRervation.reservation}`;
   }
 };
-
+//function to alert that you can reserve in this section
 bookingAlert();
